@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Elle's Tree</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <% palette = "003" %>
+  <% permutaion = %w{ 0 1 2 3 4 5 } %>
+  <% pbc = permutaion.map{ |i| "coolors-palette-#{palette}-b#{i.to_s}"} %>
+  <% pcc = permutaion.map{ |i| "coolors-palette-#{palette}-c#{i.to_s}"} %>
+  <% pfc = permutaion.map{ |i| "coolors-palette-#{palette}-f#{i.to_s}"} %>
+  <body class="<%= pbc[2] %>">
+    <%= yield %>
+  </body>
+</html>
